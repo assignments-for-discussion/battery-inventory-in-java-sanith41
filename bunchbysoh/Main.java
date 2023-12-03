@@ -69,9 +69,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
-     final int HEALTHY_THRESHOLD = 60;
-     final int EXCHANGE_THRESHOLD = 10;
-     final int RATED_CAPACITY = 120.0;
+     
     testBucketingByHealth();
   }
 }
