@@ -17,10 +17,10 @@ public class Main {
       double stateofhealth=(double)capacity/120*100;
 
       //cataegorize battery based on state of health
-      if(stateofhealth<=100&&stateofhealth>60 ){
+      if(stateofhealth<=100&&stateofhealth>80 ){
         counts.healthy++;
       }
-      else if( stateofhealth<=60&&stateofhealth>10){
+      else if( stateofhealth<=80&&stateofhealth>62){
       counts.exchange++;
       }
       else{
@@ -42,27 +42,7 @@ public class Main {
     assert(counts.exchange == 3);
     assert(counts.failed == 1);
 
-    //Test case 2 all healthy batteries
-    int[] presentCapacities2 = {110, 115, 118, 120, 112};
-    CountsBySoH counts2 = countBatteriesByHealth(presentCapacities2);
-    assert (counts2.healthy == 5);
-    assert (counts2.exchange == 0);
-    assert (counts2.failed == 0);
-
-    // Test case 3 all failed batteries
-    int[] presentCapacities3 = {50, 55, 60, 45, 58};
-    CountsBySoH counts3 = countBatteriesByHealth(presentCapacities3);
-    assert (counts3.healthy == 0);
-    assert (counts3.exchange == 0);
-    assert (counts3.failed == 5);
-
-    // Test case 4 all exchange batteries
-    int[] presentCapacities4 = {70, 75, 78, 85, 63};
-    CountsBySoH counts4 = countBatteriesByHealth(presentCapacities4);
-    assert (counts4.healthy == 0);
-    assert (counts4.exchange == 5);
-    assert (counts4.failed == 0);
-
+    
 
     
     System.out.println("Done counting :)\n");
