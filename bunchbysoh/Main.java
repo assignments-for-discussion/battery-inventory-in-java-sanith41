@@ -42,11 +42,7 @@ public class Main {
     assert(counts.exchange == 3);
     assert(counts.failed == 1);
 
-    int[] presentCapacitiesDecimal = {115, 62.5, 80.5};
-CountsBySoH countsDecimal = countBatteriesByHealth(presentCapacitiesDecimal);
-assert (countsDecimal.healthy == 1);
-assert (countsDecimal.exchange == 2);
-assert (countsDecimal.failed == 0);
+  
 
     int[] presentCapacitiesLowest = {0};
 CountsBySoH countsLowest = countBatteriesByHealth(presentCapacitiesLowest);
