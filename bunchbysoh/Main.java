@@ -14,13 +14,13 @@ public class Main {
     for(int capacity: presentCapacities){
       
       //calculate state of health as percentage
-      double stateofhealth=(double)capacity/RATED_CAPACITY*100;
+      double stateofhealth=(double)capacity/120*100;
 
       //cataegorize battery based on state of health
-      if(stateofhealth<=100&&stateofhealth>HEALTHY_THRESHOLD ){
+      if(stateofhealth<=100&&stateofhealth>60 ){
         counts.healthy++;
       }
-      else if( stateofhealth<=HEALTHY_THRESHOLD&&stateofhealth>EXCHANGE_THRESHOLD){
+      else if( stateofhealth<=60&&stateofhealth>10){
       counts.exchange++;
       }
       else{
@@ -69,9 +69,9 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    static final int HEALTHY_THRESHOLD = 60;
-    static final int EXCHANGE_THRESHOLD = 10;
-    static final double RATED_CAPACITY = 120.0;
+     final int HEALTHY_THRESHOLD = 60;
+     final int EXCHANGE_THRESHOLD = 10;
+     final int RATED_CAPACITY = 120.0;
     testBucketingByHealth();
   }
 }
